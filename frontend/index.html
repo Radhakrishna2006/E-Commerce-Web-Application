@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopHub — Product Catalog</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="logo">Shop<span>Hub</span></a>
+    <nav class="nav-links">
+      <a href="index.html" class="active">Shop</a>
+      <a href="cart.html">Cart <span class="cart-badge cart-count hidden">0</span></a>
+      <a href="orders.html">My Orders</a>
+      <a href="admin.html" id="nav-admin" class="hidden">Admin</a>
+      <span id="nav-user" class="user-info hidden"></span>
+      <a href="login.html" id="nav-login">Login</a>
+      <a href="register.html" id="nav-register">Register</a>
+      <button type="button" id="nav-logout" class="btn btn-secondary btn-sm hidden">Logout</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Product Catalog</h1>
+    <p class="page-subtitle">Browse our collection and add items to your cart.</p>
+
+    <div id="alert" class="alert hidden"></div>
+
+    <div class="toolbar">
+      <input type="search" id="search" placeholder="Search products…" aria-label="Search">
+      <select id="category" aria-label="Category filter">
+        <option value="">All categories</option>
+      </select>
+    </div>
+
+    <div id="product-grid" class="product-grid"></div>
+    <p id="empty" class="empty-state hidden">No products found.</p>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/catalog.js"></script>
+</body>
+</html>

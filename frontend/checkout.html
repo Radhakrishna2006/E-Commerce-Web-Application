@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout — ShopHub</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a href="index.html" class="logo">Shop<span>Hub</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <span id="nav-user" class="user-info hidden"></span>
+      <button type="button" id="nav-logout" class="btn btn-secondary btn-sm hidden">Logout</button>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="page-title">Checkout</h1>
+    <p class="page-subtitle">Enter shipping details to place your order.</p>
+
+    <div id="alert" class="alert hidden"></div>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:900px;">
+      <form id="checkout-form" class="form-card" style="max-width:none;margin:0;">
+        <h2 style="margin-bottom:1rem;font-size:1.1rem;">Shipping address</h2>
+        <div class="form-group">
+          <label for="street">Street</label>
+          <input type="text" id="street" required>
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <input type="text" id="city" required>
+        </div>
+        <div class="form-group">
+          <label for="state">State / Province</label>
+          <input type="text" id="state" required>
+        </div>
+        <div class="form-group">
+          <label for="zip">ZIP / Postal code</label>
+          <input type="text" id="zip" required>
+        </div>
+        <div class="form-group">
+          <label for="country">Country</label>
+          <input type="text" id="country" required value="USA">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Place order</button>
+      </form>
+
+      <div class="cart-summary" style="max-width:none;height:fit-content;">
+        <h2 style="margin-bottom:1rem;font-size:1.1rem;">Order summary</h2>
+        <div id="summary-items"></div>
+        <p class="total">Total: <span id="summary-total">$0.00</span></p>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/api.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>
